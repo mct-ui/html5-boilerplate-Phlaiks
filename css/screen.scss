@@ -110,7 +110,7 @@ $breakpoints: (
 // Grid
 // ---
 
-$container-max-width: calc(1400 / $root-font-size * 1rem);
+$container-max-width: calc(1200 / $root-font-size * 1rem);
 
 // The gutter between columns
 $grid-gutter: $space-m;
@@ -156,13 +156,19 @@ img {
 */
 
 html {
+  font-size: calc($root-font-size/16 * 100%);
+  font-family: $font-family-primary;
+  line-height: 1.5;
+  color: $color-text;
+  scroll-behavior: smooth;
 }
-
 /*
     Customize the background color and color to match your design.
 */
 
 ::selection {
+  background-color: $color-primary;
+  color: red;
 }
 
 /*
@@ -172,17 +178,41 @@ html {
 */
 
 h1 {
+  font-size: $ms5;
+  font-weight: 700;
+  margin-bottom: $space-m;
+  line-height: calc($baseline*5);
+
+  @include mq(bp1){
+    font-size: $ms9;
+    line-height: calc($baseline*6);
+  }
+
+  @include mq(bp2){
+    font-size: $ms11;
+    lg
+  }
 }
 
 h2 {
+  font-size: $ms3;
+  font-weight: 700;
+  margin-bottom: $space-m;
+  line-height: calc($baseline*4);
 }
 
 h3 {
+  font-size: $ms1;
+  font-weight: 700;
+  margin-bottom: $space-m;
+  line-height: calc($baseline*4);
 }
 
 h4,
 h5,
 h6 {
+  margin-bottom: $space-m;
+  line-height: calc($baseline*3);
 }
 
 p,
@@ -192,10 +222,12 @@ dl,
 table,
 address,
 figure {
+  margin-bottom: $space-m;
 }
 
 ul,
 ol {
+  margin-bottom: $space-m;
 }
 
 li ul,
@@ -203,24 +235,31 @@ li ol {
 }
 
 blockquote {
+  margin-bottom: $space-m;
 }
 
 figcaption {
+  margin-bottom: $space-m;
 }
 
 hr {
+  margin-bottom: $space-m;
 }
 
 a {
-}
-
-a:hover {
+  color: $color-primary;
 }
 
 a:visited {
+  color: $color-primary;
+}
+
+a:hover {
+  color: $color-primary-lighter;
 }
 
 a:active {
+  color: $color-primary-light;
 }
 
 /*---------------------------------------/*
@@ -234,6 +273,25 @@ a:active {
 */
 
 .o-row {
+  //padding:$space-m $space-m 0 $space-m;
+  padding:$space-m $space-m 0;
+  display: flow-root;
+}
+
+.o-row--primary{
+  background-color: $color-primary;
+  color: white;
+}
+
+.o-row--dark{
+  background-color: $color-text;
+  color: white;
+}
+
+.o-row--xl{
+  @include mq(bp2){
+    padding:$space-xl $space-xl $space-m $space-xl;
+  }
 }
 
 /*
@@ -243,6 +301,9 @@ a:active {
 */
 
 .o-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $container-max-width;
 }
 
 /*
