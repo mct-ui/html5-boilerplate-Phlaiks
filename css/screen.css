@@ -10,6 +10,23 @@
 /*---------------------------------------/*
  # GENERIC
 /*---------------------------------------*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
 /*---------------------------------------/*
  # ELEMENTS
 /*---------------------------------------*/
@@ -551,4 +568,4 @@
   .u-6-of-6-bp5 {
     flex-basis: 100% !important;
   }
-}
+}/*# sourceMappingURL=screen.css.map */
